@@ -1,10 +1,13 @@
-var object
-
+var object;
+var object2 = {
+    name: "Krystian",
+    job: "Izdebski"
+};
 
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://reqres.in/api/users/2", true);
+xhr.open("POST", "https://reqres.in/api/users", true);
 xhr.onload = function(){
     object = JSON.parse(xhr.responseText);
-    alert(object.data.email);
+    alert(object.name + " | " + object.job + " | " + object.id + " | " + object.createdAt);
 };
-xhr.send();
+xhr.send(object2);
